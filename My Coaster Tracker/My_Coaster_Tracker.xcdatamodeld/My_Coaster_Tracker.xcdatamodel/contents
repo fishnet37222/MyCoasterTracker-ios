@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11232" systemVersion="16A320" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Coaster" representedClassName="Coaster" syncable="YES" codeGenerationType="class">
+        <attribute name="angleOfSteepestDrop" attributeType="Integer 32" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="dateLastRidden" optional="YES" attributeType="Date" defaultDateTimeInterval="489676200" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="maxHeightInFeet" attributeType="Integer 32" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="maxSpeedInMph" attributeType="Integer 32" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="numInversions" attributeType="Integer 32" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="numRides" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="coasterType" maxCount="1" deletionRule="Nullify" destinationEntity="CoasterType" inverseName="coasters" inverseEntity="CoasterType" syncable="YES"/>
+        <relationship name="layout" maxCount="1" deletionRule="Nullify" destinationEntity="Layout" inverseName="coasters" inverseEntity="Layout" syncable="YES"/>
+        <relationship name="manufacturer" maxCount="1" deletionRule="Nullify" destinationEntity="Manufacturer" inverseName="coasters" inverseEntity="Manufacturer" syncable="YES"/>
+        <relationship name="park" maxCount="1" deletionRule="Nullify" destinationEntity="Park" inverseName="coasters" inverseEntity="Park" syncable="YES"/>
+        <relationship name="propulsion" maxCount="1" deletionRule="Nullify" destinationEntity="Propulsion" inverseName="coasters" inverseEntity="Propulsion" syncable="YES"/>
+        <relationship name="structureMaterial" maxCount="1" deletionRule="Nullify" destinationEntity="StructureMaterial" inverseName="coasters" inverseEntity="StructureMaterial" syncable="YES"/>
+        <relationship name="trackMaterial" maxCount="1" deletionRule="Nullify" destinationEntity="TrackMaterial" inverseName="coasters" inverseEntity="TrackMaterial" syncable="YES"/>
+    </entity>
+    <entity name="CoasterType" representedClassName="CoasterType" syncable="YES" codeGenerationType="class">
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="coasters" toMany="YES" deletionRule="Deny" destinationEntity="Coaster" inverseName="coasterType" inverseEntity="Coaster" syncable="YES"/>
+    </entity>
+    <entity name="Country" representedClassName="Country" syncable="YES" codeGenerationType="class">
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="states" toMany="YES" deletionRule="Deny" destinationEntity="State" inverseName="country" inverseEntity="State" syncable="YES"/>
+    </entity>
+    <entity name="Layout" representedClassName="Layout" syncable="YES" codeGenerationType="class">
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="coasters" toMany="YES" deletionRule="Deny" destinationEntity="Coaster" inverseName="layout" inverseEntity="Coaster" syncable="YES"/>
+    </entity>
+    <entity name="Manufacturer" representedClassName="Manufacturer" syncable="YES" codeGenerationType="class">
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="coasters" optional="YES" toMany="YES" deletionRule="Deny" destinationEntity="Coaster" inverseName="manufacturer" inverseEntity="Coaster" syncable="YES"/>
+    </entity>
+    <entity name="Park" representedClassName="Park" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="coasters" toMany="YES" deletionRule="Deny" destinationEntity="Coaster" inverseName="park" inverseEntity="Coaster" syncable="YES"/>
+        <relationship name="state" maxCount="1" deletionRule="Nullify" destinationEntity="State" inverseName="parks" inverseEntity="State" syncable="YES"/>
+    </entity>
+    <entity name="Propulsion" representedClassName="Propulsion" syncable="YES" codeGenerationType="class">
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="coasters" toMany="YES" deletionRule="Deny" destinationEntity="Coaster" inverseName="propulsion" inverseEntity="Coaster" syncable="YES"/>
+    </entity>
+    <entity name="State" representedClassName="State" syncable="YES" codeGenerationType="class">
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="country" maxCount="1" deletionRule="Nullify" destinationEntity="Country" inverseName="states" inverseEntity="Country" syncable="YES"/>
+        <relationship name="parks" toMany="YES" deletionRule="Deny" destinationEntity="Park" inverseName="state" inverseEntity="Park" syncable="YES"/>
+    </entity>
+    <entity name="StructureMaterial" representedClassName="StructureMaterial" syncable="YES" codeGenerationType="class">
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="coasters" toMany="YES" deletionRule="Deny" destinationEntity="Coaster" inverseName="structureMaterial" inverseEntity="Coaster" syncable="YES"/>
+    </entity>
+    <entity name="TrackMaterial" representedClassName="TrackMaterial" syncable="YES" codeGenerationType="class">
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="coasters" toMany="YES" deletionRule="Deny" destinationEntity="Coaster" inverseName="trackMaterial" inverseEntity="Coaster" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Coaster" positionX="-189" positionY="-117" width="128" height="255"/>
+        <element name="CoasterType" positionX="-2" positionY="126" width="128" height="75"/>
+        <element name="Country" positionX="-396" positionY="99" width="128" height="75"/>
+        <element name="Layout" positionX="-9" positionY="-180" width="128" height="75"/>
+        <element name="Manufacturer" positionX="16" positionY="-90" width="128" height="75"/>
+        <element name="Park" positionX="-389" positionY="-162" width="128" height="90"/>
+        <element name="Propulsion" positionX="-225" positionY="-235" width="128" height="75"/>
+        <element name="State" positionX="-398" positionY="-36" width="128" height="90"/>
+        <element name="StructureMaterial" positionX="-9" positionY="-0" width="128" height="75"/>
+        <element name="TrackMaterial" positionX="-191" positionY="179" width="128" height="75"/>
+    </elements>
+</model>
