@@ -44,7 +44,7 @@ class VisitedParksTableViewController: UITableViewController {
 			}
 			if numStates == 0 {
 				let lblNoParks = UILabel()
-				lblNoParks.text = "You have not checked in rides on any coasters."
+				lblNoParks.text = "You have not visited any parks."
 				lblNoParks.font = UIFont.italicSystemFont(ofSize: lblNoParks.font.pointSize)
 				lblNoParks.textAlignment = NSTextAlignment.center
 				lblNoParks.isOpaque = false
