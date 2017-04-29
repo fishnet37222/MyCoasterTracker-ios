@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12106.1" systemVersion="16E154a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="UhI-65-PfA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F67a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="UhI-65-PfA">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12074.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -43,8 +43,8 @@
                                         <constraint firstItem="RkC-Ss-M3G" firstAttribute="leading" secondItem="faL-0b-IBM" secondAttribute="trailing" constant="242" id="MwS-Np-X4M"/>
                                         <constraint firstItem="faL-0b-IBM" firstAttribute="centerY" secondItem="wct-uX-dCx" secondAttribute="centerY" id="V8b-Ri-ksk"/>
                                         <constraint firstItem="RkC-Ss-M3G" firstAttribute="trailing" secondItem="wct-uX-dCx" secondAttribute="trailingMargin" id="a3M-7d-0Av"/>
+                                        <constraint firstItem="faL-0b-IBM" firstAttribute="leading" secondItem="wct-uX-dCx" secondAttribute="leadingMargin" id="ivz-Df-xut"/>
                                         <constraint firstItem="RkC-Ss-M3G" firstAttribute="centerY" secondItem="wct-uX-dCx" secondAttribute="centerY" id="mx5-xV-pkx"/>
-                                        <constraint firstItem="faL-0b-IBM" firstAttribute="leading" secondItem="wct-uX-dCx" secondAttribute="leadingMargin" id="zs9-Gl-xXc"/>
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -150,6 +150,9 @@
                                                 <constraint firstItem="5Yz-7Q-gXT" firstAttribute="centerY" secondItem="Soq-gp-wTF" secondAttribute="centerY" id="ira-B7-nnA"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="EQg-CQ-jJR" kind="showDetail" id="PKg-ir-Zzt"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="7LW-0P-1RS">
                                         <rect key="frame" x="0.0" y="123" width="375" height="44"/>
@@ -258,6 +261,70 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Bn-kx-kRu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1708" y="-256"/>
+        </scene>
+        <!--Visited Parks-->
+        <scene sceneID="5cv-sf-SaR">
+            <objects>
+                <tableViewController title="Visited Parks" id="gQv-XC-HR8" customClass="VisitedParksTableViewController" customModule="My_Coaster_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="3P1-gP-7sd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="visitedParkCell" id="UZI-Ti-Vae">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UZI-Ti-Vae" id="KCM-k4-mlF">
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gm0-qS-YBB">
+                                            <rect key="frame" x="8" y="11" width="334" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="gm0-qS-YBB" secondAttribute="trailing" id="YWa-Ru-dnB"/>
+                                        <constraint firstItem="gm0-qS-YBB" firstAttribute="leading" secondItem="KCM-k4-mlF" secondAttribute="leadingMargin" id="cat-h4-Tnu"/>
+                                        <constraint firstItem="gm0-qS-YBB" firstAttribute="centerY" secondItem="KCM-k4-mlF" secondAttribute="centerY" id="s3L-u5-Z7a"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="gQv-XC-HR8" id="eyS-yZ-kaH"/>
+                            <outlet property="delegate" destination="gQv-XC-HR8" id="LxL-O9-3mX"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Visited Parks" id="Eh8-TT-wv3">
+                        <barButtonItem key="rightBarButtonItem" title="Check In" id="z1E-Oy-HtM">
+                            <connections>
+                                <segue destination="1Mc-gm-wb1" kind="presentation" id="Iwr-cv-FZ2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="da5-GC-0yJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3493.5999999999999" y="-257.72113943028489"/>
+        </scene>
+        <!--Visited Parks Navigation-->
+        <scene sceneID="bL5-JR-XSo">
+            <objects>
+                <navigationController title="Visited Parks Navigation" id="EQg-CQ-jJR" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Uhd-9g-2nA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="gQv-XC-HR8" kind="relationship" relationship="rootViewController" id="xhs-fm-7Mk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ah9-QF-3At" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2545" y="-257"/>
         </scene>
         <!--Menu-->
         <scene sceneID="u7h-T0-U6v">
@@ -2591,7 +2658,7 @@
         <image name="rollercoaster-trans.png" width="1024" height="1024"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="75e-ko-bNt"/>
-        <segue reference="IB7-To-HmB"/>
+        <segue reference="Iwr-cv-FZ2"/>
+        <segue reference="Cf1-b0-5uj"/>
     </inferredMetricsTieBreakers>
 </document>
