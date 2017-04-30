@@ -91,6 +91,13 @@ class VisitedParksTableViewController: UITableViewController {
 		return cell!
     }
 	
+	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		let viewController = self.storyboard?.instantiateViewController(withIdentifier: "riddenCoastersView") as! RiddenCoastersTableViewController
+		viewController.setPark((tableView.cellForRow(at: indexPath)?.contentView.subviews[0] as! UILabel).text!, indexPath: indexPath)
+		self.navigationController?.pushViewController(viewController, animated: true)
+		tableView.deselectRow(at: indexPath, animated: false)
+	}
+	
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
 		self.tableView.reloadData()

@@ -13,7 +13,7 @@
         <!--Ridden Coasters-->
         <scene sceneID="PgS-S0-70L">
             <objects>
-                <tableViewController id="X6n-iq-E4M" customClass="RiddenCoastersTableViewController" customModule="My_Coaster_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="riddenCoastersView" id="X6n-iq-E4M" customClass="RiddenCoastersTableViewController" customModule="My_Coaster_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="klW-tx-Uld">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2658,7 +2658,7 @@
         <image name="rollercoaster-trans.png" width="1024" height="1024"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Iwr-cv-FZ2"/>
+        <segue reference="IB7-To-HmB"/>
         <segue reference="Cf1-b0-5uj"/>
     </inferredMetricsTieBreakers>
 </document>

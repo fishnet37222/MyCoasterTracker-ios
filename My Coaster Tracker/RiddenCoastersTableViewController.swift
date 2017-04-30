@@ -13,6 +13,16 @@ class RiddenCoastersTableViewController: UITableViewController {
 	let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 	var parks: [NSManagedObject]?
 	var park: NSManagedObject?
+	
+	func setPark(_ name: String, indexPath: IndexPath) {
+		let fetchRequest: NSFetchRequest<State> = State.fetchRequest()
+		var states: [NSManagedObject]?
+		do {
+			try states = context.fetch(fetchRequest)
+		} catch {
+		}
+		park = states?[indexPath.section].mutableSetValue(forKey: "parks").allObjects[indexPath.row] as? NSManagedObject
+	}
 
     override func viewDidLoad() {
         super.viewDidLoad()
