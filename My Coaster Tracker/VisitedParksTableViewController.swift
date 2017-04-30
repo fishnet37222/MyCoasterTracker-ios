@@ -13,6 +13,16 @@ class VisitedParksTableViewController: UITableViewController {
 	let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 	var states: [NSManagedObject]?
 	var state: NSManagedObject?
+	
+	func setState(_ name: String, indexPath: IndexPath) {
+		let fetchRequest: NSFetchRequest<Country> = Country.fetchRequest()
+		var countries: [NSManagedObject]?
+		do {
+			try countries = context.fetch(fetchRequest)
+		} catch {
+		}
+		state = countries?[indexPath.section].mutableSetValue(forKey: "states").allObjects[indexPath.row] as? NSManagedObject
+	}
 
     override func viewDidLoad() {
         super.viewDidLoad()

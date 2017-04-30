@@ -174,6 +174,9 @@
                                                 <constraint firstItem="UZB-O2-mL0" firstAttribute="centerY" secondItem="bH2-eE-pND" secondAttribute="centerY" id="uQL-4S-MeK"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="sk5-Hu-t7z" kind="showDetail" id="MFU-Md-8DE"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="atx-VE-rXD">
                                         <rect key="frame" x="0.0" y="167" width="375" height="44"/>
@@ -265,7 +268,7 @@
         <!--Visited Parks-->
         <scene sceneID="5cv-sf-SaR">
             <objects>
-                <tableViewController title="Visited Parks" id="gQv-XC-HR8" customClass="VisitedParksTableViewController" customModule="My_Coaster_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="visitedParksView" title="Visited Parks" id="gQv-XC-HR8" customClass="VisitedParksTableViewController" customModule="My_Coaster_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="3P1-gP-7sd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -309,6 +312,70 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="da5-GC-0yJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3493.5999999999999" y="-257.72113943028489"/>
+        </scene>
+        <!--Visited States-->
+        <scene sceneID="uIe-VF-z92">
+            <objects>
+                <tableViewController title="Visited States" id="42c-Pw-Ury" customClass="VisitedStatesTableViewController" customModule="My_Coaster_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Uch-dn-6dE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="visitedStatesCell" id="cXP-dv-aTo">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cXP-dv-aTo" id="8UP-rS-5qA">
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zfW-Qr-YTX">
+                                            <rect key="frame" x="8" y="11" width="334" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="zfW-Qr-YTX" secondAttribute="trailing" id="7gg-A8-lEV"/>
+                                        <constraint firstItem="zfW-Qr-YTX" firstAttribute="centerY" secondItem="8UP-rS-5qA" secondAttribute="centerY" id="899-hY-TJx"/>
+                                        <constraint firstItem="zfW-Qr-YTX" firstAttribute="leading" secondItem="8UP-rS-5qA" secondAttribute="leadingMargin" id="joD-at-BV9"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="42c-Pw-Ury" id="Gm8-PF-2dv"/>
+                            <outlet property="delegate" destination="42c-Pw-Ury" id="xJr-oa-rpY"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Visited States" id="ZPG-ue-N7T">
+                        <barButtonItem key="rightBarButtonItem" title="Check In" id="E33-Db-BrW">
+                            <connections>
+                                <segue destination="1Mc-gm-wb1" kind="presentation" id="G4x-a2-JPY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zpz-Il-Mig" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3493.5999999999999" y="497.90104947526243"/>
+        </scene>
+        <!--Visited States Navigation-->
+        <scene sceneID="GvC-wm-xWr">
+            <objects>
+                <navigationController title="Visited States Navigation" id="sk5-Hu-t7z" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RfY-4b-yNb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="42c-Pw-Ury" kind="relationship" relationship="rootViewController" id="OkQ-jL-Bx7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qJq-T5-4Cb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2545" y="498"/>
         </scene>
         <!--Visited Parks Navigation-->
         <scene sceneID="bL5-JR-XSo">
@@ -2658,7 +2725,7 @@
         <image name="rollercoaster-trans.png" width="1024" height="1024"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="IB7-To-HmB"/>
         <segue reference="Cf1-b0-5uj"/>
+        <segue reference="G4x-a2-JPY"/>
     </inferredMetricsTieBreakers>
 </document>
