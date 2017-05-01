@@ -34,6 +34,10 @@ class VisitedStatesTableViewController: UITableViewController {
 		if (model == "iPad") {
 			self.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
 		}
+		
+		if (country != nil) {
+			self.navigationItem.title = country?.value(forKey: "name") as? String
+		}
     }
 
     override func didReceiveMemoryWarning() {

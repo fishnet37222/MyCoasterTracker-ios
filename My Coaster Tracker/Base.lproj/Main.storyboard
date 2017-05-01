@@ -198,6 +198,9 @@
                                                 <constraint firstItem="tmN-pJ-uOP" firstAttribute="centerY" secondItem="9oa-Kq-rD2" secondAttribute="centerY" id="pkg-qC-W9g"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="M6V-d6-cF8" kind="showDetail" id="T7g-nq-fBC"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -316,7 +319,7 @@
         <!--Visited States-->
         <scene sceneID="uIe-VF-z92">
             <objects>
-                <tableViewController title="Visited States" id="42c-Pw-Ury" customClass="VisitedStatesTableViewController" customModule="My_Coaster_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="visitedStatesView" title="Visited States" id="42c-Pw-Ury" customClass="VisitedStatesTableViewController" customModule="My_Coaster_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Uch-dn-6dE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -360,6 +363,70 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zpz-Il-Mig" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3493.5999999999999" y="497.90104947526243"/>
+        </scene>
+        <!--Visited Countries-->
+        <scene sceneID="cQ6-8o-Ogx">
+            <objects>
+                <tableViewController title="Visited Countries" id="qBf-Ot-85c" customClass="VisitedCountriesTableViewController" customModule="My_Coaster_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="URS-Fm-tzJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="visitedCountriesCell" id="PJi-uQ-NNy">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PJi-uQ-NNy" id="5qz-WO-WRu">
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oD4-B9-tFO">
+                                            <rect key="frame" x="8" y="11" width="334" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="oD4-B9-tFO" firstAttribute="centerY" secondItem="5qz-WO-WRu" secondAttribute="centerY" id="2Yd-nu-Wa2"/>
+                                        <constraint firstItem="oD4-B9-tFO" firstAttribute="leading" secondItem="5qz-WO-WRu" secondAttribute="leading" constant="8" id="KJC-jJ-fYg"/>
+                                        <constraint firstAttribute="trailing" secondItem="oD4-B9-tFO" secondAttribute="trailing" id="jk1-GO-lt8"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="qBf-Ot-85c" id="gc4-lj-67Z"/>
+                            <outlet property="delegate" destination="qBf-Ot-85c" id="QtB-aS-c33"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Visited Countries" id="H1W-ok-fvX">
+                        <barButtonItem key="rightBarButtonItem" title="Check In" id="dE8-AE-4PV">
+                            <connections>
+                                <segue destination="1Mc-gm-wb1" kind="presentation" id="aTK-ZR-Q6a"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hhp-dW-DWb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3493.5999999999999" y="1300.2998500749627"/>
+        </scene>
+        <!--Visited Countries Navigation-->
+        <scene sceneID="txr-HF-bzO">
+            <objects>
+                <navigationController title="Visited Countries Navigation" id="M6V-d6-cF8" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vdg-uh-4d0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="qBf-Ot-85c" kind="relationship" relationship="rootViewController" id="zix-lJ-9hS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rVA-FI-Hdk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2545" y="1300"/>
         </scene>
         <!--Visited States Navigation-->
         <scene sceneID="GvC-wm-xWr">

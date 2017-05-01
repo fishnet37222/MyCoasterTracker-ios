@@ -27,6 +27,7 @@
 		637BF92D1E58B22C0045D606 /* AddStateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637BF92C1E58B22C0045D606 /* AddStateTableViewController.swift */; };
 		637BF92F1E58B2BB0045D606 /* PickStateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637BF92E1E58B2BB0045D606 /* PickStateTableViewController.swift */; };
 		637BF9311E58B3350045D606 /* AddParkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637BF9301E58B3350045D606 /* AddParkTableViewController.swift */; };
+		637CA03A1EB6AFED00D1AB12 /* VisitedCountriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CA0391EB6AFED00D1AB12 /* VisitedCountriesTableViewController.swift */; };
 		63AA1F501EB49DE300F6B710 /* VisitedParksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AA1F4F1EB49DE300F6B710 /* VisitedParksTableViewController.swift */; };
 		63B3044E1EB67804002DD596 /* VisitedStatesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B3044D1EB67804002DD596 /* VisitedStatesTableViewController.swift */; };
 		63B5732B1E5892B700E213FF /* TextEditorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B5732A1E5892B700E213FF /* TextEditorTableViewController.swift */; };
@@ -63,6 +64,7 @@
 		637BF92C1E58B22C0045D606 /* AddStateTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddStateTableViewController.swift; sourceTree = "<group>"; };
 		637BF92E1E58B2BB0045D606 /* PickStateTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickStateTableViewController.swift; sourceTree = "<group>"; };
 		637BF9301E58B3350045D606 /* AddParkTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddParkTableViewController.swift; sourceTree = "<group>"; };
+		637CA0391EB6AFED00D1AB12 /* VisitedCountriesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitedCountriesTableViewController.swift; sourceTree = "<group>"; };
 		63AA1F4F1EB49DE300F6B710 /* VisitedParksTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitedParksTableViewController.swift; sourceTree = "<group>"; };
 		63B3044D1EB67804002DD596 /* VisitedStatesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitedStatesTableViewController.swift; sourceTree = "<group>"; };
 		63B5732A1E5892B700E213FF /* TextEditorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextEditorTableViewController.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				636AB6431E5960BA0064BBFE /* EditCoasterTableViewController.swift */,
 				63AA1F4F1EB49DE300F6B710 /* VisitedParksTableViewController.swift */,
 				63B3044D1EB67804002DD596 /* VisitedStatesTableViewController.swift */,
+				637CA0391EB6AFED00D1AB12 /* VisitedCountriesTableViewController.swift */,
 			);
 			path = "My Coaster Tracker";
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 				633446B61E52D27200577244 /* MenuTableViewController.swift in Sources */,
 				63AA1F501EB49DE300F6B710 /* VisitedParksTableViewController.swift in Sources */,
 				637BF92B1E58B1A40045D606 /* PickCountryTableViewController.swift in Sources */,
+				637CA03A1EB6AFED00D1AB12 /* VisitedCountriesTableViewController.swift in Sources */,
 				636AB6421E595FB40064BBFE /* CoasterDetailsTableViewController.swift in Sources */,
 				633446B81E52D2AA00577244 /* RiddenCoastersTableViewController.swift in Sources */,
 				63DEEA2A1E57F33000949AF3 /* LicenseViewController.swift in Sources */,
