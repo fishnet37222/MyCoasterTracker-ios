@@ -74,7 +74,7 @@ class CoasterDetailsTableViewController: UITableViewController {
 		super.didReceiveMemoryWarning()
 	}
 	
-	func editWasTapped() {
+	@objc func editWasTapped() {
 		let viewController = self.storyboard?.instantiateViewController(withIdentifier: "editCoasterNavigationController") as! UINavigationController
 		let dest = viewController.topViewController as! EditCoasterTableViewController
 		dest.context = context
