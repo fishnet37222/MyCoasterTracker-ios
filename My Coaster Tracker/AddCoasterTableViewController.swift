@@ -23,7 +23,7 @@ class AddCoasterTableViewController: UITableViewController, PickParkProtocol, Te
 	@IBOutlet weak var lblStructureMaterial: UILabel!
 	@IBOutlet weak var lblTrackMaterial: UILabel!
 	@IBOutlet weak var btnDone: UIBarButtonItem!
-	var context: NSManagedObjectContext?
+	@objc var context: NSManagedObjectContext?
 	
 	func setValue(for textEditorType: TextEditorType, value: String) {
 		switch textEditorType {
@@ -72,12 +72,12 @@ class AddCoasterTableViewController: UITableViewController, PickParkProtocol, Te
 		checkDoneStatus()
 	}
 	
-	func setPark(_ parkName: String) {
+	@objc func setPark(_ parkName: String) {
 		lblParkName.text = parkName
 		checkDoneStatus()
 	}
 	
-	func checkDoneStatus() {
+	@objc func checkDoneStatus() {
 		var done = true
 		
 		if lblCoasterName.text == "" || lblNumInversions.text == "" || lblMaxSpeed.text == "" || lblMaxHeight.text == "" || lblMaxDropAngle.text == "" || lblParkName.text == "" || lblManufacturerName.text == "" || lblLayoutName.text == "" || lblCoasterType.text == "" || lblPropulsion.text == "" || lblStructureMaterial.text == "" || lblTrackMaterial.text == "" {
