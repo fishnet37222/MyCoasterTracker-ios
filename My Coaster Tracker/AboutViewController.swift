@@ -20,6 +20,13 @@ class AboutViewController: UIViewController {
 		}
 		if (model == "iPad") {
 			self.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
+
+			let splitViewController = self.splitViewController!
+			if UIApplication.shared.statusBarOrientation == .portrait {
+				UIView.animate(withDuration: 0.2, animations: {
+					splitViewController.preferredDisplayMode = .primaryHidden
+				})
+			}
 		}
     }
 
