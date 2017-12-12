@@ -45,7 +45,7 @@ class AddParkTableViewController: UITableViewController, PickStateProtocol, Text
     
     @objc func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.endEditing(true)
-        btnDone.isEnabled = (textField.text?.characters.count)! > 0
+        btnDone.isEnabled = (textField.text?.count)! > 0
         return true
     }
     

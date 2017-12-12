@@ -7,17 +7,18 @@
 //
 
 import UIKit
+import WebKit
 
-class LicenseViewController: UIViewController, UIWebViewDelegate {
-	@IBOutlet weak var webView: UIWebView!
-
+class LicenseViewController: UIViewController, WKNavigationDelegate {
+	@IBOutlet weak var webView: WKWebView!
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 
-		webView.delegate = self
+		webView.navigationDelegate = self
 		let localFilePath = Bundle.main.url(forResource: "LICENSE-2.0", withExtension: "html")
 		let request = URLRequest(url: localFilePath!)
-		webView.loadRequest(request);
+		webView.load(request)
 
 		let model = UIDevice.current.model
 		if (model == "iPhone") {
@@ -50,14 +51,14 @@ class LicenseViewController: UIViewController, UIWebViewDelegate {
         // Pass the selected object to the new view controller.
     }
     */
-
-	func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
-		switch navigationType {
-		case UIWebViewNavigationType.linkClicked:
-			UIApplication.shared.open(request.url!, options: [:], completionHandler: nil)
-			return false
+	
+	func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+		switch navigationAction.navigationType {
+		case WKNavigationType.linkActivated:
+			UIApplication.shared.open(navigationAction.request.url!, options: [:], completionHandler: nil)
+			decisionHandler(WKNavigationActionPolicy.cancel)
 		default:
-			return true
+			decisionHandler(WKNavigationActionPolicy.allow)
 		}
 	}
 }

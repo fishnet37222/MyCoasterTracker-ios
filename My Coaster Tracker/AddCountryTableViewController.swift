@@ -16,7 +16,7 @@ class AddCountryTableViewController: UITableViewController, TextEditorProtocol {
     
     func setValue(for textEditorType: TextEditorType, value: String) {
         lblCountryName.text = value
-        btnDone.isEnabled = value.characters.count > 0
+        btnDone.isEnabled = value.count > 0
     }
     
     @IBAction func cancelWasTapped(_ sender: UIBarButtonItem) {
