@@ -11,10 +11,10 @@ import CoreData
 
 class CheckInTableViewController: UITableViewController, DatePickerProtocol, TextEditorProtocol, PickCoasterProtocol {
     @IBOutlet weak var btnDone: UIBarButtonItem!
-    @IBOutlet weak var lblPickCoaster: UILabel!
-    @IBOutlet weak var lblPickDate: UILabel!
-    @IBOutlet weak var lblNumRides: UILabel!
-    @objc var context: NSManagedObjectContext?
+	@IBOutlet weak var lblPickCoaster: UILabel!
+	@IBOutlet weak var lblPickDate: UILabel!
+	@IBOutlet weak var lblNumRides: UILabel!
+	@objc var context: NSManagedObjectContext?
     
     func setValue(for textEditorType: TextEditorType, value: String) {
         lblNumRides.text = value

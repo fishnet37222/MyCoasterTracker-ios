@@ -98,7 +98,7 @@ class RiddenCoastersTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "riddenCoasterCell")
-        let lblName = cell?.contentView.subviews[1] as! UILabel
+        let lblName = cell?.contentView.subviews[0] as! UILabel
         var coaster: NSManagedObject
         if park == nil {
             coaster = parks?[indexPath.section].mutableSetValue(forKey: "coasters").allObjects[indexPath.row] as! NSManagedObject
@@ -106,7 +106,7 @@ class RiddenCoastersTableViewController: UITableViewController {
             coaster = park?.mutableSetValue(forKey: "coasters").allObjects[indexPath.row] as! NSManagedObject
         }
         lblName.text = coaster.value(forKey: "name") as? String
-        let lblNumRides = cell?.contentView.subviews[0] as! UILabel
+        let lblNumRides = cell?.contentView.subviews[1] as! UILabel
         lblNumRides.text = "\(coaster.value(forKey: "numRides") as! Int)"
         return cell!
     }

@@ -13,19 +13,19 @@ class CoasterDetailsTableViewController: UITableViewController {
     @objc var editButton: UIBarButtonItem?
     @objc let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     @objc var coaster: NSManagedObject?
-    @IBOutlet weak var lblNumInversions: UILabel!
-    @IBOutlet weak var lblMaxSpeed: UILabel!
-    @IBOutlet weak var lblMaxHeight: UILabel!
-    @IBOutlet weak var lblMaxDropAngle: UILabel!
-    @IBOutlet weak var lblPark: UILabel!
-    @IBOutlet weak var lblState: UILabel!
-    @IBOutlet weak var lblCountry: UILabel!
-    @IBOutlet weak var lblManufacturer: UILabel!
-    @IBOutlet weak var lblLayout: UILabel!
-    @IBOutlet weak var lblType: UILabel!
-    @IBOutlet weak var lblPropulsion: UILabel!
-    @IBOutlet weak var lblStructure: UILabel!
-    @IBOutlet weak var lblTrack: UILabel!
+	@IBOutlet weak var lblNumInversions: UILabel!
+	@IBOutlet weak var lblMaxSpeed: UILabel!
+	@IBOutlet weak var lblMaxHeight: UILabel!
+	@IBOutlet weak var lblMaxDropAngle: UILabel!
+	@IBOutlet weak var lblPark: UILabel!
+	@IBOutlet weak var lblState: UILabel!
+	@IBOutlet weak var lblCountry: UILabel!
+	@IBOutlet weak var lblManufacturer: UILabel!
+	@IBOutlet weak var lblLayout: UILabel!
+	@IBOutlet weak var lblType: UILabel!
+	@IBOutlet weak var lblPropulsion: UILabel!
+	@IBOutlet weak var lblStructure: UILabel!
+	@IBOutlet weak var lblTrack: UILabel!
     
     @objc func setCoaster(_ name: String, indexPath: IndexPath) {
         let fetchRequest: NSFetchRequest<Park> = Park.fetchRequest()
