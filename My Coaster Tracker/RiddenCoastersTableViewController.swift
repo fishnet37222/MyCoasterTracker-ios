@@ -114,6 +114,9 @@ class RiddenCoastersTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let viewController = self.storyboard?.instantiateViewController(withIdentifier: "coasterDetailsView") as! CoasterDetailsTableViewController
         viewController.setCoaster((tableView.cellForRow(at: indexPath)?.contentView.subviews[0] as! UILabel).text!, indexPath: indexPath)
+		let backButton = UIBarButtonItem()
+		backButton.title = self.navigationItem.title!
+		self.navigationItem.backBarButtonItem = backButton
         self.navigationController?.pushViewController(viewController, animated: true)
         tableView.deselectRow(at: indexPath, animated: false)
     }
