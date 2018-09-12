@@ -72,10 +72,10 @@ class VisitedStatesTableViewController: UITableViewController {
                 lblNoStates.lineBreakMode = NSLineBreakMode.byWordWrapping
                 lblNoStates.numberOfLines = 0
                 tableView.backgroundView = lblNoStates
-                tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+                tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
             } else {
                 tableView.backgroundView = nil
-                tableView.separatorStyle = UITableViewCellSeparatorStyle.singleLine
+                tableView.separatorStyle = UITableViewCell.SeparatorStyle.singleLine
             }
             return numCountries
         }

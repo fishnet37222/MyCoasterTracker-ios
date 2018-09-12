@@ -46,8 +46,8 @@ class TextEditorTableViewController: UITableViewController, UITextFieldDelegate 
         txtValue.delegate = self
         keyboardToolbar = UIToolbar(frame: CGRect(x: 0.0, y: 0.0, width: self.view.frame.size.width, height: 44.0))
         var items: [UIBarButtonItem] = []
-        items.append(UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil))
-        items.append(UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done, target: self, action: #selector(TextEditorTableViewController.dismissKeyboard)))
+        items.append(UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil))
+        items.append(UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(TextEditorTableViewController.dismissKeyboard)))
         keyboardToolbar?.setItems(items, animated: false)
         if let value = previousValue {
             txtValue.text = value

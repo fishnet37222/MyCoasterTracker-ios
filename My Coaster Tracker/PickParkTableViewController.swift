@@ -46,10 +46,10 @@ class PickParkTableViewController: UITableViewController {
             lblNoParks.lineBreakMode = NSLineBreakMode.byWordWrapping
             lblNoParks.numberOfLines = 0
             tableView.backgroundView = lblNoParks
-            tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+            tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         } else {
             tableView.backgroundView = nil
-            tableView.separatorStyle = UITableViewCellSeparatorStyle.singleLine
+            tableView.separatorStyle = UITableViewCell.SeparatorStyle.singleLine
         }
         return numStates
     }
@@ -65,22 +65,22 @@ class PickParkTableViewController: UITableViewController {
         let labelText = (states?[indexPath.section].mutableSetValue(forKey: "parks").allObjects[indexPath.row] as AnyObject).value(forKey: "name") as! String
         label.text = labelText
         if labelText == currentParkName {
-            cell.accessoryType = UITableViewCellAccessoryType.checkmark
+            cell.accessoryType = UITableViewCell.AccessoryType.checkmark
         } else {
-            cell.accessoryType = UITableViewCellAccessoryType.none
+            cell.accessoryType = UITableViewCell.AccessoryType.none
         }
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)!
-        cell.accessoryType = UITableViewCellAccessoryType.checkmark
+        cell.accessoryType = UITableViewCell.AccessoryType.checkmark
         currentParkName = (cell.contentView.subviews[0] as! UILabel).text!
         _ = self.navigationController?.popViewController(animated: true)
     }
     
     override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCellAccessoryType.none
+        tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.none
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

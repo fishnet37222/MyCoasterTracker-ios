@@ -72,10 +72,10 @@ class RiddenCoastersTableViewController: UITableViewController {
                 lblNoCoasters.lineBreakMode = NSLineBreakMode.byWordWrapping
                 lblNoCoasters.numberOfLines = 0
                 tableView.backgroundView = lblNoCoasters
-                tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+                tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
             } else {
                 tableView.backgroundView = nil
-                tableView.separatorStyle = UITableViewCellSeparatorStyle.singleLine
+                tableView.separatorStyle = UITableViewCell.SeparatorStyle.singleLine
             }
             return numParks
         }

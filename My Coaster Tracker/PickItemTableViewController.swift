@@ -32,7 +32,7 @@ class PickItemTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        btnAdd = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.add, target: self, action: #selector(PickItemTableViewController.addWasTapped))
+        btnAdd = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: #selector(PickItemTableViewController.addWasTapped))
         self.navigationItem.rightBarButtonItem = btnAdd
         switch pickItemType! {
         case PickItemType.CoasterType:
@@ -96,10 +96,10 @@ class PickItemTableViewController: UITableViewController {
                 lblNoItems.lineBreakMode = NSLineBreakMode.byWordWrapping
                 lblNoItems.numberOfLines = 0
                 tableView.backgroundView = lblNoItems
-                tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+                tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
             } else {
                 tableView.backgroundView = nil
-                tableView.separatorStyle = UITableViewCellSeparatorStyle.singleLine
+                tableView.separatorStyle = UITableViewCell.SeparatorStyle.singleLine
             }
             break
         case PickItemType.Layout:
@@ -118,10 +118,10 @@ class PickItemTableViewController: UITableViewController {
                 lblNoItems.lineBreakMode = NSLineBreakMode.byWordWrapping
                 lblNoItems.numberOfLines = 0
                 tableView.backgroundView = lblNoItems
-                tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+                tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
             } else {
                 tableView.backgroundView = nil
-                tableView.separatorStyle = UITableViewCellSeparatorStyle.singleLine
+                tableView.separatorStyle = UITableViewCell.SeparatorStyle.singleLine
             }
             break
         case PickItemType.Manufacturer:
@@ -140,10 +140,10 @@ class PickItemTableViewController: UITableViewController {
                 lblNoItems.lineBreakMode = NSLineBreakMode.byWordWrapping
                 lblNoItems.numberOfLines = 0
                 tableView.backgroundView = lblNoItems
-                tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+                tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
             } else {
                 tableView.backgroundView = nil
-                tableView.separatorStyle = UITableViewCellSeparatorStyle.singleLine
+                tableView.separatorStyle = UITableViewCell.SeparatorStyle.singleLine
             }
             break
         case PickItemType.Propulsion:
@@ -162,10 +162,10 @@ class PickItemTableViewController: UITableViewController {
                 lblNoItems.lineBreakMode = NSLineBreakMode.byWordWrapping
                 lblNoItems.numberOfLines = 0
                 tableView.backgroundView = lblNoItems
-                tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+                tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
             } else {
                 tableView.backgroundView = nil
-                tableView.separatorStyle = UITableViewCellSeparatorStyle.singleLine
+                tableView.separatorStyle = UITableViewCell.SeparatorStyle.singleLine
             }
             break
         case PickItemType.Structure:
@@ -184,10 +184,10 @@ class PickItemTableViewController: UITableViewController {
                 lblNoItems.lineBreakMode = NSLineBreakMode.byWordWrapping
                 lblNoItems.numberOfLines = 0
                 tableView.backgroundView = lblNoItems
-                tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+                tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
             } else {
                 tableView.backgroundView = nil
-                tableView.separatorStyle = UITableViewCellSeparatorStyle.singleLine
+                tableView.separatorStyle = UITableViewCell.SeparatorStyle.singleLine
             }
             break
         case PickItemType.Track:
@@ -206,10 +206,10 @@ class PickItemTableViewController: UITableViewController {
                 lblNoItems.lineBreakMode = NSLineBreakMode.byWordWrapping
                 lblNoItems.numberOfLines = 0
                 tableView.backgroundView = lblNoItems
-                tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+                tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
             } else {
                 tableView.backgroundView = nil
-                tableView.separatorStyle = UITableViewCellSeparatorStyle.singleLine
+                tableView.separatorStyle = UITableViewCell.SeparatorStyle.singleLine
             }
             break
         }
@@ -221,20 +221,20 @@ class PickItemTableViewController: UITableViewController {
         let label = cell.contentView.subviews[0] as! UILabel
         label.text = items?[indexPath.row].value(forKey: "name") as? String
         if label.text == currentItemName {
-            cell.accessoryType = UITableViewCellAccessoryType.checkmark
+            cell.accessoryType = UITableViewCell.AccessoryType.checkmark
         }
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)
-        cell?.accessoryType = UITableViewCellAccessoryType.checkmark
+        cell?.accessoryType = UITableViewCell.AccessoryType.checkmark
         currentItemName = (cell?.contentView.subviews[0] as! UILabel).text!
         _ = self.navigationController?.popViewController(animated: true)
     }
     
     override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCellAccessoryType.none
+        tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.none
     }
     
     override func viewWillDisappear(_ animated: Bool) {

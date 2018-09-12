@@ -52,7 +52,7 @@ class CoasterDetailsTableViewController: UITableViewController {
         let propulsion = coaster?.value(forKey: "propulsion") as! NSManagedObject
         let structure = coaster?.value(forKey: "structureMaterial") as! NSManagedObject
         let track = coaster?.value(forKey: "trackMaterial") as! NSManagedObject
-        editButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.edit, target: self, action: #selector(editWasTapped))
+        editButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.edit, target: self, action: #selector(editWasTapped))
         self.navigationItem.rightBarButtonItem = editButton
         lblNumInversions.text = "\(coaster?.value(forKey: "numInversions") as! Int)"
         lblMaxSpeed.text = "\(coaster?.value(forKey: "maxSpeedInMph") as! Int)"

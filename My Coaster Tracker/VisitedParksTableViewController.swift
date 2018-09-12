@@ -72,10 +72,10 @@ class VisitedParksTableViewController: UITableViewController {
                 lblNoParks.lineBreakMode = NSLineBreakMode.byWordWrapping
                 lblNoParks.numberOfLines = 0
                 tableView.backgroundView = lblNoParks
-                tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+                tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
             } else {
                 tableView.backgroundView = nil
-                tableView.separatorStyle = UITableViewCellSeparatorStyle.singleLine
+                tableView.separatorStyle = UITableViewCell.SeparatorStyle.singleLine
             }
             return numStates
         }

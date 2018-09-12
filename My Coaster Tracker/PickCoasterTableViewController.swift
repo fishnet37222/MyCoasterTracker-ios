@@ -46,10 +46,10 @@ class PickCoasterTableViewController: UITableViewController {
             lblNoCoasters.lineBreakMode = NSLineBreakMode.byWordWrapping
             lblNoCoasters.numberOfLines = 0
             tableView.backgroundView = lblNoCoasters
-            tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+            tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         } else {
             tableView.backgroundView = nil
-            tableView.separatorStyle = UITableViewCellSeparatorStyle.singleLine
+            tableView.separatorStyle = UITableViewCell.SeparatorStyle.singleLine
         }
         return numParks
     }
@@ -64,7 +64,7 @@ class PickCoasterTableViewController: UITableViewController {
         let labelText = (parks?[indexPath.section].mutableSetValue(forKey: "coasters").allObjects[indexPath.row] as AnyObject).value(forKey: "name") as! String
         label.text = labelText
         if labelText == currentCoasterName {
-            cell.accessoryType = UITableViewCellAccessoryType.checkmark
+            cell.accessoryType = UITableViewCell.AccessoryType.checkmark
         }
         return cell
     }
@@ -75,13 +75,13 @@ class PickCoasterTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)!
-        cell.accessoryType = UITableViewCellAccessoryType.checkmark
+        cell.accessoryType = UITableViewCell.AccessoryType.checkmark
         currentCoasterName = (cell.contentView.subviews[0] as! UILabel).text!
         _ = self.navigationController?.popViewController(animated: true)
     }
     
     override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCellAccessoryType.none
+        tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.none
     }
     
     override func viewWillDisappear(_ animated: Bool) {

@@ -50,9 +50,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let viewController = navigationController2.topViewController!
         viewController.performSegue(withIdentifier: "checkInSegue", sender: self)
     }
-
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         DDLog.add(DDASLLogger.sharedInstance())
         DDLog.add(DDTTYLogger.sharedInstance())
         let fileLogger = DDFileLogger()
@@ -62,13 +61,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         defaultDebugLevel = DDLogLevel.all
         var shouldPerformAdditionalDelegateHandling = true
         
-        if let shortcutItem = launchOptions?[UIApplicationLaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem {
+        if let shortcutItem = launchOptions?[UIApplication.LaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem {
             launchedShortcutItem = shortcutItem
             shouldPerformAdditionalDelegateHandling = false
         }
         
         return shouldPerformAdditionalDelegateHandling
     }
+    
+//    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+//        DDLog.add(DDASLLogger.sharedInstance())
+//        DDLog.add(DDTTYLogger.sharedInstance())
+//        let fileLogger = DDFileLogger()
+//        fileLogger?.rollingFrequency = TimeInterval(60*60*24)
+//        fileLogger?.logFileManager.maximumNumberOfLogFiles = 7
+//        DDLog.add(fileLogger)
+//        defaultDebugLevel = DDLogLevel.all
+//        var shouldPerformAdditionalDelegateHandling = true
+//
+//        if let shortcutItem = launchOptions?[UIApplication.LaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem {
+//            launchedShortcutItem = shortcutItem
+//            shouldPerformAdditionalDelegateHandling = false
+//        }
+//
+//        return shouldPerformAdditionalDelegateHandling
+//    }
     
     func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
         let handledShortCutItem = handleShortCutItem(shortcutItem)
