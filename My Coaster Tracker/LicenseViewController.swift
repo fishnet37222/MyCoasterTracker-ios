@@ -12,21 +12,21 @@ import WebKit
 class LicenseViewController: UIViewController, WKNavigationDelegate {
 	@IBOutlet weak var webView: WKWebView!
 	
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		
 		webView.navigationDelegate = self
 		let localFilePath = Bundle.main.url(forResource: "LICENSE-2.0", withExtension: "html")
 		let request = URLRequest(url: localFilePath!)
 		webView.load(request)
-
+		
 		let model = UIDevice.current.model
 		if (model == "iPhone") {
 			self.navigationItem.backBarButtonItem = self.splitViewController?.displayModeButtonItem
 		}
 		if (model == "iPad") {
 			self.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
-
+			
 			let splitViewController = self.splitViewController!
 			if UIApplication.shared.statusBarOrientation == .portrait {
 				UIView.animate(withDuration: 0.2, animations: {
@@ -34,23 +34,23 @@ class LicenseViewController: UIViewController, WKNavigationDelegate {
 				})
 			}
 		}
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+	}
+	
+	override func didReceiveMemoryWarning() {
+		super.didReceiveMemoryWarning()
+		// Dispose of any resources that can be recreated.
+	}
+	
+	
+	/*
+	// MARK: - Navigation
+	
+	// In a storyboard-based application, you will often want to do a little preparation before navigation
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+	// Get the new view controller using segue.destinationViewController.
+	// Pass the selected object to the new view controller.
+	}
+	*/
 	
 	func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
 		switch navigationAction.navigationType {

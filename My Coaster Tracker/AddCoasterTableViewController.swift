@@ -86,14 +86,14 @@ class AddCoasterTableViewController: UITableViewController, PickParkProtocol, Te
 		
 		btnDone.isEnabled = done
 	}
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+	}
+	
+	override func didReceiveMemoryWarning() {
+		super.didReceiveMemoryWarning()
+	}
 	
 	@IBAction func cancelWasTapped(_ sender: UIBarButtonItem) {
 		self.presentingViewController?.dismiss(animated: true, completion: nil)

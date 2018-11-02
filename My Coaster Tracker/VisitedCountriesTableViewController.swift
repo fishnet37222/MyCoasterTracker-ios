@@ -10,80 +10,80 @@ import UIKit
 import CoreData
 
 class VisitedCountriesTableViewController: UITableViewController {
-    @objc let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    @objc var countries: [NSManagedObject]?
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        let model = UIDevice.current.model
-        if (model == "iPhone") {
-            self.navigationItem.backBarButtonItem = self.splitViewController?.displayModeButtonItem
-        }
-        if (model == "iPad") {
-            self.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
-
+	@objc let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+	@objc var countries: [NSManagedObject]?
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		
+		let model = UIDevice.current.model
+		if (model == "iPhone") {
+			self.navigationItem.backBarButtonItem = self.splitViewController?.displayModeButtonItem
+		}
+		if (model == "iPad") {
+			self.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
+			
 			let splitViewController = self.splitViewController!
 			if UIApplication.shared.statusBarOrientation == .portrait {
 				UIView.animate(withDuration: 0.2, animations: {
 					splitViewController.preferredDisplayMode = .primaryHidden
 				})
 			}
-        }
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let fetchRequest: NSFetchRequest<Country> = Country.fetchRequest()
-        var numCountries: Int = 0
-        do {
-            countries = try context.fetch(fetchRequest)
-            numCountries = (countries?.count)!
-        } catch {
-        }
-        if numCountries == 0 {
-            let lblNoCountries = UILabel()
-            lblNoCountries.text = "You have not visited any countries."
-            lblNoCountries.font = UIFont.italicSystemFont(ofSize: lblNoCountries.font.pointSize)
-            lblNoCountries.textAlignment = NSTextAlignment.center
-            lblNoCountries.isOpaque = false
-            lblNoCountries.lineBreakMode = NSLineBreakMode.byWordWrapping
-            lblNoCountries.numberOfLines = 0
-            tableView.backgroundView = lblNoCountries
-            tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
-        } else {
-            tableView.backgroundView = nil
-            tableView.separatorStyle = UITableViewCell.SeparatorStyle.singleLine
-        }
-        return numCountries
-    }
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "visitedCountriesCell")
-        let lblName = cell?.contentView.subviews[0] as! UILabel
-        lblName.text = countries?[indexPath.row].value(forKey: "name") as? String
-        return cell!
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let viewController = self.storyboard?.instantiateViewController(withIdentifier: "visitedStatesView") as! VisitedStatesTableViewController
-        viewController.setCountry((tableView.cellForRow(at: indexPath)?.contentView.subviews[0] as! UILabel).text!, indexPath: indexPath)
+		}
+	}
+	
+	override func didReceiveMemoryWarning() {
+		super.didReceiveMemoryWarning()
+	}
+	
+	override func numberOfSections(in tableView: UITableView) -> Int {
+		return 1
+	}
+	
+	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		let fetchRequest: NSFetchRequest<Country> = Country.fetchRequest()
+		var numCountries: Int = 0
+		do {
+			countries = try context.fetch(fetchRequest)
+			numCountries = (countries?.count)!
+		} catch {
+		}
+		if numCountries == 0 {
+			let lblNoCountries = UILabel()
+			lblNoCountries.text = "You have not visited any countries."
+			lblNoCountries.font = UIFont.italicSystemFont(ofSize: lblNoCountries.font.pointSize)
+			lblNoCountries.textAlignment = NSTextAlignment.center
+			lblNoCountries.isOpaque = false
+			lblNoCountries.lineBreakMode = NSLineBreakMode.byWordWrapping
+			lblNoCountries.numberOfLines = 0
+			tableView.backgroundView = lblNoCountries
+			tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+		} else {
+			tableView.backgroundView = nil
+			tableView.separatorStyle = UITableViewCell.SeparatorStyle.singleLine
+		}
+		return numCountries
+	}
+	
+	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		let cell = tableView.dequeueReusableCell(withIdentifier: "visitedCountriesCell")
+		let lblName = cell?.contentView.subviews[0] as! UILabel
+		lblName.text = countries?[indexPath.row].value(forKey: "name") as? String
+		return cell!
+	}
+	
+	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		let viewController = self.storyboard?.instantiateViewController(withIdentifier: "visitedStatesView") as! VisitedStatesTableViewController
+		viewController.setCountry((tableView.cellForRow(at: indexPath)?.contentView.subviews[0] as! UILabel).text!, indexPath: indexPath)
 		let backButton = UIBarButtonItem()
 		backButton.title = self.navigationItem.title!
 		self.navigationItem.backBarButtonItem = backButton
-        self.navigationController?.pushViewController(viewController, animated: true)
-        tableView.deselectRow(at: indexPath, animated: false)
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        self.tableView.reloadData()
-    }
+		self.navigationController?.pushViewController(viewController, animated: true)
+		tableView.deselectRow(at: indexPath, animated: false)
+	}
+	
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		self.tableView.reloadData()
+	}
 }
