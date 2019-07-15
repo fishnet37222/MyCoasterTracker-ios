@@ -13,30 +13,14 @@
 //   to endorse or promote products derived from this software without specific
 //   prior written permission of Deusty, LLC.
 
-#import <CocoaLumberjack/DDASLLogger.h>
+#ifndef SwiftLogLevel_h
+#define SwiftLogLevel_h
 
-@protocol DDLogger;
+#ifndef DD_LOG_LEVEL
+// #warning 'DD_LOG_LEVEL' is not defined. Using 'DDLogLevelAll' as default. Consider defining it yourself.
+#define DD_LOG_LEVEL DDLogLevelAll
+#endif
 
-/**
- *  This class provides the ability to capture the ASL (Apple System Logs)
- */
-API_DEPRECATED("Use DDOSLogger instead", macosx(10.4,10.12), ios(2.0,10.0), watchos(2.0,3.0), tvos(9.0,10.0))
-@interface DDASLLogCapture : NSObject
+static const DDLogLevel DDDefaultLogLevel = DD_LOG_LEVEL;
 
-/**
- *  Start capturing logs
- */
-+ (void)start;
-
-/**
- *  Stop capturing logs
- */
-+ (void)stop;
-
-/**
- *  The current capture level.
- *  @note Default log level: DDLogLevelVerbose (i.e. capture all ASL messages).
- */
-@property (class) DDLogLevel captureLevel;
-
-@end
+#endif /* SwiftLogLevel_h */

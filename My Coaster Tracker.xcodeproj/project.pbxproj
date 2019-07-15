@@ -15,6 +15,7 @@
 		633446AB1E52D05B00577244 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 633446AA1E52D05B00577244 /* Assets.xcassets */; };
 		633446B61E52D27200577244 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633446B51E52D27200577244 /* MenuTableViewController.swift */; };
 		633446B81E52D2AA00577244 /* RiddenCoastersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633446B71E52D2AA00577244 /* RiddenCoastersTableViewController.swift */; };
+		6356991322DCB4FB0048B73F /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6356991222DCB4FB0048B73F /* WebKit.framework */; };
 		636AB6421E595FB40064BBFE /* CoasterDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636AB6411E595FB40064BBFE /* CoasterDetailsTableViewController.swift */; };
 		636AB6441E5960BA0064BBFE /* EditCoasterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636AB6431E5960BA0064BBFE /* EditCoasterTableViewController.swift */; };
 		6377C76C1E58EAE20082070A /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 6377C76B1E58EAE20082070A /* Podfile */; };
@@ -52,6 +53,7 @@
 		633446AF1E52D05B00577244 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		633446B51E52D27200577244 /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		633446B71E52D2AA00577244 /* RiddenCoastersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RiddenCoastersTableViewController.swift; sourceTree = "<group>"; };
+		6356991222DCB4FB0048B73F /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		636AB6411E595FB40064BBFE /* CoasterDetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoasterDetailsTableViewController.swift; sourceTree = "<group>"; };
 		636AB6431E5960BA0064BBFE /* EditCoasterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditCoasterTableViewController.swift; sourceTree = "<group>"; };
 		6377C76B1E58EAE20082070A /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -85,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6356991322DCB4FB0048B73F /* WebKit.framework in Frameworks */,
 				559A5F42C0DBB35B9C94F5DC /* Pods_My_Coaster_Tracker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -104,6 +107,7 @@
 		4CC8B53A1C7FFE9E83B4A2D2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6356991222DCB4FB0048B73F /* WebKit.framework */,
 				83E4314FFD9A2CB3575A5E81 /* Pods_My_Coaster_Tracker.framework */,
 			);
 			name = Frameworks;
@@ -179,7 +183,6 @@
 				6334469A1E52D05B00577244 /* Frameworks */,
 				6334469B1E52D05B00577244 /* Resources */,
 				EF6E24256C60D0A57E4DAF93 /* [CP] Embed Pods Frameworks */,
-				7420B78FC9066CD12C7492E6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -249,28 +252,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-My Coaster Tracker-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		7420B78FC9066CD12C7492E6 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-My Coaster Tracker/Pods-My Coaster Tracker-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EF6E24256C60D0A57E4DAF93 /* [CP] Embed Pods Frameworks */ = {
@@ -278,14 +269,16 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-My Coaster Tracker/Pods-My Coaster Tracker-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-My Coaster Tracker/Pods-My Coaster Tracker-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-My Coaster Tracker/Pods-My Coaster Tracker-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-My Coaster Tracker/Pods-My Coaster Tracker-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

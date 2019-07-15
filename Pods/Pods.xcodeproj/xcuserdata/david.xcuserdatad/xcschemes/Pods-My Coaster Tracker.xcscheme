@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1020"
+   LastUpgradeVersion = "1100"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "81BB216E2FF246D4DC84B6BAA15D3070"
+               BlueprintIdentifier = "AE611B04A8BA24AA1BEA477898CA559E"
                BuildableName = "Pods_My_Coaster_Tracker.framework"
                BlueprintName = "Pods-My Coaster Tracker"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "81BB216E2FF246D4DC84B6BAA15D3070"
+            BlueprintIdentifier = "AE611B04A8BA24AA1BEA477898CA559E"
             BuildableName = "Pods_My_Coaster_Tracker.framework"
             BlueprintName = "Pods-My Coaster Tracker"
             ReferencedContainer = "container:Pods.xcodeproj">
