@@ -38,7 +38,7 @@
 		63C917801E58115700FCA4BE /* CheckInTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C9177F1E58115700FCA4BE /* CheckInTableViewController.swift */; };
 		63D1DD311E57E5AB007935F0 /* My_Coaster_Tracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 63D1DD2F1E57E5AB007935F0 /* My_Coaster_Tracker.xcdatamodeld */; };
 		63DEEA261E57F15800949AF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63DEEA251E57F15800949AF3 /* LaunchScreen.storyboard */; };
-		63DEEA281E57F27800949AF3 /* LICENSE-2.0.html in Resources */ = {isa = PBXBuildFile; fileRef = 63DEEA271E57F27800949AF3 /* LICENSE-2.0.html */; };
+		63DEEA281E57F27800949AF3 /* LICENSE.html in Resources */ = {isa = PBXBuildFile; fileRef = 63DEEA271E57F27800949AF3 /* LICENSE.html */; };
 		63DEEA2A1E57F33000949AF3 /* LicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DEEA291E57F33000949AF3 /* LicenseViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -76,7 +76,7 @@
 		63C9177F1E58115700FCA4BE /* CheckInTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckInTableViewController.swift; sourceTree = "<group>"; };
 		63D1DD301E57E5AB007935F0 /* My_Coaster_Tracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = My_Coaster_Tracker.xcdatamodel; sourceTree = "<group>"; };
 		63DEEA251E57F15800949AF3 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		63DEEA271E57F27800949AF3 /* LICENSE-2.0.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "LICENSE-2.0.html"; sourceTree = "<group>"; };
+		63DEEA271E57F27800949AF3 /* LICENSE.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = LICENSE.html; sourceTree = "<group>"; };
 		63DEEA291E57F33000949AF3 /* LicenseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LicenseViewController.swift; sourceTree = "<group>"; };
 		83E4314FFD9A2CB3575A5E81 /* Pods_My_Coaster_Tracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_My_Coaster_Tracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C43FA580C490D18991190D1F /* Pods-My Coaster Tracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My Coaster Tracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-My Coaster Tracker/Pods-My Coaster Tracker.debug.xcconfig"; sourceTree = "<group>"; };
@@ -136,7 +136,7 @@
 		6334469F1E52D05B00577244 /* My Coaster Tracker */ = {
 			isa = PBXGroup;
 			children = (
-				63DEEA271E57F27800949AF3 /* LICENSE-2.0.html */,
+				63DEEA271E57F27800949AF3 /* LICENSE.html */,
 				63D1DD2F1E57E5AB007935F0 /* My_Coaster_Tracker.xcdatamodeld */,
 				631AC5C71E5331F5005DD3E5 /* rollercoaster-trans.png */,
 				633446A01E52D05B00577244 /* AppDelegate.swift */,
@@ -236,7 +236,7 @@
 			files = (
 				6377C76C1E58EAE20082070A /* Podfile in Resources */,
 				631AC5C81E5331F5005DD3E5 /* rollercoaster-trans.png in Resources */,
-				63DEEA281E57F27800949AF3 /* LICENSE-2.0.html in Resources */,
+				63DEEA281E57F27800949AF3 /* LICENSE.html in Resources */,
 				63DEEA261E57F15800949AF3 /* LaunchScreen.storyboard in Resources */,
 				633446AB1E52D05B00577244 /* Assets.xcassets in Resources */,
 				633446A61E52D05B00577244 /* Main.storyboard in Resources */,

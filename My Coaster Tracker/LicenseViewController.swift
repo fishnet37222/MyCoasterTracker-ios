@@ -16,9 +16,9 @@ class LicenseViewController: UIViewController, WKNavigationDelegate {
 		super.viewDidLoad()
 		
 		webView.navigationDelegate = self
-		let localFilePath = Bundle.main.url(forResource: "LICENSE-2.0", withExtension: "html")
-		let request = URLRequest(url: localFilePath!)
-		webView.load(request)
+		let localFilePath = Bundle.main.path(forResource: "LICENSE", ofType: "html")
+		let url = URL(fileURLWithPath: localFilePath!)
+		webView.loadFileURL(url, allowingReadAccessTo: url)
 		
 		let model = UIDevice.current.model
 		if (model == "iPhone") {
