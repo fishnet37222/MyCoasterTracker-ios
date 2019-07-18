@@ -24,6 +24,7 @@ class AddCoasterTableViewController: UITableViewController, PickParkProtocol, Te
 	@IBOutlet weak var lblTrackMaterial: UILabel!
 	@IBOutlet weak var btnDone: UIBarButtonItem!
 	@objc var context: NSManagedObjectContext?
+	var parentView: PickCoasterTableViewController?
 	
 	func setValue(for textEditorType: TextEditorType, value: String) {
 		switch textEditorType {
@@ -143,7 +144,7 @@ class AddCoasterTableViewController: UITableViewController, PickParkProtocol, Te
 		newCoaster.setValue(trackMaterials[0], forKey: "trackMaterial")
 		
 		try! context?.save()
-		
+		parentView?.reloadData()
 		self.dismiss(animated: true, completion: nil)
 	}
 	

@@ -91,9 +91,8 @@ class PickCoasterTableViewController: UITableViewController {
 		}
 	}
 	
-	override func viewDidAppear(_ animated: Bool) {
-		super.viewDidAppear(animated)
-		tableView.reloadData()
+	public func reloadData() {
+		self.tableView.reloadData()
 	}
 	
 	// MARK: - Navigation
@@ -106,6 +105,7 @@ class PickCoasterTableViewController: UITableViewController {
 			childContext.parent = self.context
 			childContext.automaticallyMergesChangesFromParent = true
 			dest.context = childContext
+			dest.parentView = self
 		}
 	}
 }

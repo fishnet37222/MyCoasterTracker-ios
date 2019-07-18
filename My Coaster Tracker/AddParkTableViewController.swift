@@ -14,6 +14,7 @@ class AddParkTableViewController: UITableViewController, PickStateProtocol, Text
 	@IBOutlet weak var btnDone: UIBarButtonItem!
 	@IBOutlet weak var lblParkName: UILabel!
 	@objc var context: NSManagedObjectContext?
+	var parentView: PickParkTableViewController?
 	
 	func setValue(for textEditorType: TextEditorType, value: String) {
 		lblParkName.text = value
@@ -57,6 +58,7 @@ class AddParkTableViewController: UITableViewController, PickStateProtocol, Text
 		let states: [NSManagedObject] = try! context!.fetch(stateFetchRequest)
 		newPark.setValue(states[0], forKey: "state")
 		try! context?.save()
+		
 		self.dismiss(animated: true, completion: nil)
 	}
 	

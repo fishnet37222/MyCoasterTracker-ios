@@ -64,6 +64,7 @@ class PickItemTableViewController: UITableViewController {
 		childContext.automaticallyMergesChangesFromParent = true
 		dest.context = childContext
 		dest.pickItemType = self.pickItemType
+		dest.parentView = self
 		self.present(addDialog, animated: true, completion: nil)
 	}
 	
@@ -244,8 +245,7 @@ class PickItemTableViewController: UITableViewController {
 		}
 	}
 	
-	override func viewDidAppear(_ animated: Bool) {
-		super.viewDidAppear(animated)
+	public func reloadData() {
 		self.tableView.reloadData()
 	}
 }

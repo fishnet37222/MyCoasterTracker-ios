@@ -14,6 +14,7 @@ class AddItemTableViewController: UITableViewController, TextEditorProtocol {
 	@IBOutlet weak var btnDone: UIBarButtonItem!
 	@objc var context: NSManagedObjectContext?
 	var pickItemType: PickItemType?
+	var parentView: PickItemTableViewController?
 	
 	func setValue(for textEditorType: TextEditorType, value: String) {
 		lblItemName.text = value
@@ -48,6 +49,7 @@ class AddItemTableViewController: UITableViewController, TextEditorProtocol {
 		}
 		newItem?.setValue(lblItemName.text, forKey: "name")
 		try! context?.save()
+		parentView?.reloadData()
 		self.dismiss(animated: true, completion: nil)
 	}
 	

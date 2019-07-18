@@ -87,8 +87,7 @@ class PickCountryTableViewController: UITableViewController {
 		}
 	}
 	
-	override func viewDidAppear(_ animated: Bool) {
-		super.viewDidAppear(true)
+	public func reloadData() {
 		self.tableView.reloadData()
 	}
 	
@@ -99,6 +98,7 @@ class PickCountryTableViewController: UITableViewController {
 			childContext.parent = self.context
 			childContext.automaticallyMergesChangesFromParent = true
 			dest.context = childContext
+            dest.parentView = self
 		}
 	}
 }

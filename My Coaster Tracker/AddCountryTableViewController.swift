@@ -13,6 +13,7 @@ class AddCountryTableViewController: UITableViewController, TextEditorProtocol {
 	@IBOutlet weak var btnDone: UIBarButtonItem!
 	@IBOutlet weak var lblCountryName: UILabel!
 	@objc var context: NSManagedObjectContext?
+    var parentView: PickCountryTableViewController?
 	
 	func setValue(for textEditorType: TextEditorType, value: String) {
 		lblCountryName.text = value
@@ -28,6 +29,7 @@ class AddCountryTableViewController: UITableViewController, TextEditorProtocol {
 		let newCountry = NSEntityDescription.insertNewObject(forEntityName: "Country", into: context!)
 		newCountry.setValue(lblCountryName.text, forKey: "name")
 		try! context?.save()
+        parentView?.reloadData()
 		self.dismiss(animated: true, completion: nil)
 	}
 	

@@ -94,9 +94,8 @@ class PickParkTableViewController: UITableViewController {
 		}
 	}
 	
-	override func viewDidAppear(_ animated: Bool) {
-		super.viewDidAppear(animated)
-		tableView.reloadData()
+	public func reloadData() {
+		self.tableView.reloadData()
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -105,6 +104,7 @@ class PickParkTableViewController: UITableViewController {
 			let childContext = NSManagedObjectContext(concurrencyType: NSManagedObjectContextConcurrencyType.mainQueueConcurrencyType)
 			childContext.parent = self.context
 			childContext.automaticallyMergesChangesFromParent = true
+			dest.parentView = self
 			dest.context = childContext
 		}
 	}

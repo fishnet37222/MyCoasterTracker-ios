@@ -14,6 +14,7 @@ class AddStateTableViewController: UITableViewController, PickCountryProtocol, T
 	@IBOutlet weak var lblCountryName: UILabel!
 	@IBOutlet weak var lblStateName: UILabel!
 	@objc var context: NSManagedObjectContext?
+	var parentView: PickStateTableViewController?
 	
 	func setValue(for textEditorType: TextEditorType, value: String) {
 		lblStateName.text = value
@@ -51,6 +52,7 @@ class AddStateTableViewController: UITableViewController, PickCountryProtocol, T
 		let countries: [NSManagedObject] = try! context!.fetch(countryFetchRequest)
 		newState.setValue(countries[0], forKey: "country")
 		try! context?.save()
+		parentView?.reloadData()
 		self.dismiss(animated: true, completion: nil)
 	}
 	
