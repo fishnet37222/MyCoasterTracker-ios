@@ -1,6 +1,0 @@
-framework module Pods_My_Coaster_Tracker {
-  umbrella header "Pods-My Coaster Tracker-umbrella.h"
-
-  export *
-  module * { export * }
-}

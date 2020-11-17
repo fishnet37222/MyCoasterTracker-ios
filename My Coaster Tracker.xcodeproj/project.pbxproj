@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		559A5F42C0DBB35B9C94F5DC /* Pods_My_Coaster_Tracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83E4314FFD9A2CB3575A5E81 /* Pods_My_Coaster_Tracker.framework */; };
 		631AC5C81E5331F5005DD3E5 /* rollercoaster-trans.png in Resources */ = {isa = PBXBuildFile; fileRef = 631AC5C71E5331F5005DD3E5 /* rollercoaster-trans.png */; };
 		631FAAA51E53230B00769EA1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631FAAA41E53230B00769EA1 /* MainViewController.swift */; };
 		633446A11E52D05B00577244 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633446A01E52D05B00577244 /* AppDelegate.swift */; };
@@ -43,7 +42,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0154EB6EB57BC7F8F948CA7C /* Pods-My Coaster Tracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My Coaster Tracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-My Coaster Tracker/Pods-My Coaster Tracker.release.xcconfig"; sourceTree = "<group>"; };
 		631AC5C71E5331F5005DD3E5 /* rollercoaster-trans.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rollercoaster-trans.png"; sourceTree = "<group>"; };
 		631FAAA41E53230B00769EA1 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		6334469D1E52D05B00577244 /* My Coaster Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Coaster Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,8 +76,6 @@
 		63DEEA251E57F15800949AF3 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		63DEEA271E57F27800949AF3 /* LICENSE.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = LICENSE.html; sourceTree = "<group>"; };
 		63DEEA291E57F33000949AF3 /* LicenseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LicenseViewController.swift; sourceTree = "<group>"; };
-		83E4314FFD9A2CB3575A5E81 /* Pods_My_Coaster_Tracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_My_Coaster_Tracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C43FA580C490D18991190D1F /* Pods-My Coaster Tracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My Coaster Tracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-My Coaster Tracker/Pods-My Coaster Tracker.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,27 +84,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				6356991322DCB4FB0048B73F /* WebKit.framework in Frameworks */,
-				559A5F42C0DBB35B9C94F5DC /* Pods_My_Coaster_Tracker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		09CE428B1B8636B63A194F82 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				C43FA580C490D18991190D1F /* Pods-My Coaster Tracker.debug.xcconfig */,
-				0154EB6EB57BC7F8F948CA7C /* Pods-My Coaster Tracker.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		4CC8B53A1C7FFE9E83B4A2D2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				6356991222DCB4FB0048B73F /* WebKit.framework */,
-				83E4314FFD9A2CB3575A5E81 /* Pods_My_Coaster_Tracker.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -119,7 +104,6 @@
 				6377C76B1E58EAE20082070A /* Podfile */,
 				6334469F1E52D05B00577244 /* My Coaster Tracker */,
 				6334469E1E52D05B00577244 /* Products */,
-				09CE428B1B8636B63A194F82 /* Pods */,
 				4CC8B53A1C7FFE9E83B4A2D2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -178,11 +162,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 633446B21E52D05B00577244 /* Build configuration list for PBXNativeTarget "My Coaster Tracker" */;
 			buildPhases = (
-				0A43875B624151096B442655 /* [CP] Check Pods Manifest.lock */,
 				633446991E52D05B00577244 /* Sources */,
 				6334469A1E52D05B00577244 /* Frameworks */,
 				6334469B1E52D05B00577244 /* Resources */,
-				EF6E24256C60D0A57E4DAF93 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -244,44 +226,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		0A43875B624151096B442655 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-My Coaster Tracker-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EF6E24256C60D0A57E4DAF93 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-My Coaster Tracker/Pods-My Coaster Tracker-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-My Coaster Tracker/Pods-My Coaster Tracker-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-My Coaster Tracker/Pods-My Coaster Tracker-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		633446991E52D05B00577244 /* Sources */ = {
@@ -448,7 +392,6 @@
 		};
 		633446B31E52D05B00577244 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C43FA580C490D18991190D1F /* Pods-My Coaster Tracker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = U4AQD93XJA;
@@ -467,7 +410,6 @@
 		};
 		633446B41E52D05B00577244 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0154EB6EB57BC7F8F948CA7C /* Pods-My Coaster Tracker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = U4AQD93XJA;
