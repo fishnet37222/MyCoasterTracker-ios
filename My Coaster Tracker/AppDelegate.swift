@@ -8,7 +8,6 @@
 
 import UIKit
 import CoreData
-import CocoaLumberjack
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -52,13 +51,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	}
 	
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-		DDLog.add(DDOSLogger.sharedInstance)
-		DDLog.add(DDTTYLogger.sharedInstance)
-		let fileLogger = DDFileLogger()
-		fileLogger.rollingFrequency = TimeInterval(60*60*24)
-		fileLogger.logFileManager.maximumNumberOfLogFiles = 7
-		DDLog.add(fileLogger)
-		dynamicLogLevel = DDLogLevel.all
 		var shouldPerformAdditionalDelegateHandling = true
 		
 		if let shortcutItem = launchOptions?[UIApplication.LaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem {

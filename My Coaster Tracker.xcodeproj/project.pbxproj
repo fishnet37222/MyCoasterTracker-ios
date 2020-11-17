@@ -17,7 +17,6 @@
 		6356991322DCB4FB0048B73F /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6356991222DCB4FB0048B73F /* WebKit.framework */; };
 		636AB6421E595FB40064BBFE /* CoasterDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636AB6411E595FB40064BBFE /* CoasterDetailsTableViewController.swift */; };
 		636AB6441E5960BA0064BBFE /* EditCoasterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636AB6431E5960BA0064BBFE /* EditCoasterTableViewController.swift */; };
-		6377C76C1E58EAE20082070A /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 6377C76B1E58EAE20082070A /* Podfile */; };
 		637BF9211E58A8940045D606 /* AddCoasterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637BF9201E58A8940045D606 /* AddCoasterTableViewController.swift */; };
 		637BF9231E58A94C0045D606 /* PickParkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637BF9221E58A94C0045D606 /* PickParkTableViewController.swift */; };
 		637BF9251E58AA7E0045D606 /* PickItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637BF9241E58AA7E0045D606 /* PickItemTableViewController.swift */; };
@@ -54,7 +53,6 @@
 		6356991222DCB4FB0048B73F /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		636AB6411E595FB40064BBFE /* CoasterDetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoasterDetailsTableViewController.swift; sourceTree = "<group>"; };
 		636AB6431E5960BA0064BBFE /* EditCoasterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditCoasterTableViewController.swift; sourceTree = "<group>"; };
-		6377C76B1E58EAE20082070A /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		637BF9201E58A8940045D606 /* AddCoasterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCoasterTableViewController.swift; sourceTree = "<group>"; };
 		637BF9221E58A94C0045D606 /* PickParkTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickParkTableViewController.swift; sourceTree = "<group>"; };
 		637BF9241E58AA7E0045D606 /* PickItemTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickItemTableViewController.swift; sourceTree = "<group>"; };
@@ -101,7 +99,6 @@
 		633446941E52D05B00577244 = {
 			isa = PBXGroup;
 			children = (
-				6377C76B1E58EAE20082070A /* Podfile */,
 				6334469F1E52D05B00577244 /* My Coaster Tracker */,
 				6334469E1E52D05B00577244 /* Products */,
 				4CC8B53A1C7FFE9E83B4A2D2 /* Frameworks */,
@@ -216,7 +213,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6377C76C1E58EAE20082070A /* Podfile in Resources */,
 				631AC5C81E5331F5005DD3E5 /* rollercoaster-trans.png in Resources */,
 				63DEEA281E57F27800949AF3 /* LICENSE.html in Resources */,
 				63DEEA261E57F15800949AF3 /* LaunchScreen.storyboard in Resources */,
